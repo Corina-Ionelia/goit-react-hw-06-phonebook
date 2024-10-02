@@ -1,20 +1,19 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/contactsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(state => state.filter);
 
-  const handleChange = (e) => {
-    dispatch(setFilter(e.target.value)); // Setează filtrul
+  const handleFilterChange = (event) => {
+    dispatch(setFilter(event.target.value));
   };
 
   return (
-    <input 
-      type="text" 
-      onChange={handleChange} 
-      placeholder="Caută contact" 
-    />
+    <label>
+      Find contacts by name
+      <input type="text" value={filter} onChange={handleFilterChange} />
+    </label>
   );
 };
 

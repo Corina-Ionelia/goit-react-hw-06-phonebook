@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-cconst initialState = {
-    items: [], // Asigură-te că items este definit aici
+const initialState = {
+    items: [],
     filter: '',
 };
+
 
 const contactsSlice = createSlice({
     name: 'contacts',
