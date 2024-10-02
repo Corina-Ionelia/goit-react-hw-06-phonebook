@@ -1,0 +1,16 @@
+.filterContainer {
+  margin: 20px 0;
+}
+
+.filterInput {
+  padding: 10px;
+  border: 2px solid #ff6b6b;
+  border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.filterInput:focus {
+  border-color: #ff6b6b;
+  outline: none;
+}
