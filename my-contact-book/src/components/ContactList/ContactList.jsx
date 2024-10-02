@@ -1,26 +1,16 @@
+// src/components/ContactList/ContactList.jsx
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import ContactItem from './ContactItem'; // Asigură-te că acest import este corect
-import { removeContact } from '../../redux/contactsSlice';
+import ContactItem from './ContactItem'; // Asigură-te că această cale este corectă
 import styles from './ContactList.module.css';
 
-const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts.items);
-  const dispatch = useDispatch();
-
-  return (
-    <ul className={styles.contactList}>
-      {contacts.map(({ id, name, number }) => (
-        <ContactItem
-          key={id}
-          id={id}
-          name={name}
-          number={number}
-          onRemove={() => dispatch(removeContact(id))}
-        />
-      ))}
-    </ul>
-  );
+const ContactList = ({ contacts, onRemove }) => {
+    return (
+        <ul className={styles.contactList}>
+            {contacts.map(({ id, name, number }) => (
+                <ContactItem key={id} id={id} name={name} number={number} onRemove={() => onRemove(id)} />
+            ))}
+        </ul>
+    );
 };
 
 export default ContactList;
