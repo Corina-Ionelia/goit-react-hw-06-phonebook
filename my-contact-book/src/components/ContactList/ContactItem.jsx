@@ -1,6 +1,5 @@
-// src/components/ContactList/ContactItem.jsx
 import React from 'react';
-import styles from './ContactList.module.css';
+import styles from './ContactItem.module.css';
 
 const ContactItem = ({ id, name, number, onRemove }) => {
     return ( <
